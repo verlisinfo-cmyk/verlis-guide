@@ -491,7 +491,7 @@
         </select>
       </div>
       <div class="calc-result" id="feeResult"></div>
-      <small style="color:var(--ink-soft);display:block;margin-top:10px">※ 個人オーナーの場合、所得税および復興特別所得税として 10.21% を源泉徴収します。<br>
+      <small style="color:var(--ink-soft);display:block;margin-top:10px">※ 個人オーナーの場合、所得税および復興特別所得税として <strong>税抜金額の 10.21%</strong>（例：税込22,000円 → 税抜20,000円 × 10.21% = 2,042円）を源泉徴収します。<br>
       ※ 法人受取の場合は源泉徴収なし。請求書のあて名・振込先を正しくご記入ください。<br>
       ※ インボイス登録のある方は、請求書に登録番号を必ずご記入ください。</small>
     </div>
@@ -737,10 +737,12 @@
   function calcFee(){
     const gross = parseInt(feeType.value,10);
     const isInd = feePayee.value === "ind";
-    const withhold = isInd ? Math.floor(gross * 0.1021) : 0;
+    const base = Math.round(gross / 1.1);
+    const withhold = isInd ? Math.floor(base * 0.1021) : 0;
     const net = gross - withhold;
     feeResult.innerHTML = `
       税込金額 <span class="big">¥${gross.toLocaleString()}</span>
+      ${isInd ? `<br>税抜金額 <span class="big">¥${base.toLocaleString()}</span> × 10.21%` : ``}
       ${isInd ? `<br>− 源泉徴収 <span class="big" style="color:#a22">¥${withhold.toLocaleString()}</span>` : ``}
       <br>= 振込額 <span class="big">¥${net.toLocaleString()}</span>`;
   }
