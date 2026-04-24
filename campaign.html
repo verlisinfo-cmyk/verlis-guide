@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>育てる春、届ける夏。| VERLiS マグワリッチ 2ヶ月集中キャンペーン</title>
+<meta name="description" content="VERLiSマグワリッチ 2ヶ月集中キャンペーン。新規紹介で組織を育て、小売で届ける。5月7日〜6月30日の60日間限定施策。">
+<meta name="theme-color" content="#EDF3E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== TOKENS ===== */
+:root{
+  --bg:#EDF3E8;
+  --bg-soft:#F6F9F3;
+  --bg-card:#FFFFFF;
+  --bg-cream:#F5F1E8;
+  --bg-mint:#DCE9D8;
+  --bg-pale:#E8F0E5;
+
+  --g-darker:#1F3927;
+  --g-deep:#2E5038;
+  --g:#4A7B5A;
+  --g-mid:#5B8C6A;
+  --g-soft:#7DA88B;
+  --g-mint:#B8D4B8;
+  --g-pale:#E8F0E5;
+
+  --gold:#C9A34E;
+  --gold-light:#E4C985;
+  --gold-deep:#A6822F;
+
+  --warm:#E89456;
+  --warm-deep:#C87030;
+  --warm-soft:#F7DEC4;
+
+  --ink:#2A3630;
+  --ink-soft:#5A6B60;
+  --ink-muted:#8A9589;
+  --line:#D8E0D5;
+  --line-soft:#E8EEE5;
+
+  --sh-sm:0 2px 8px rgba(46,80,56,.06);
+  --sh:0 8px 24px rgba(46,80,56,.10);
+  --sh-lg:0 20px 52px rgba(46,80,56,.14);
+
+  --r-sm:10px;
+  --r:18px;
+  --r-lg:26px;
+
+  --serif:'Noto Serif JP','Shippori Mincho','Yu Mincho',serif;
+  --sans:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic UI',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+
+/* ===== RESET / BASE ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;letter-spacing:.01em;overflow-x:hidden;word-break:break-word;overflow-wrap:anywhere;line-break:auto}
+img,svg{max-width:100%;display:block}
+a{color:var(--g-deep);text-decoration:none}
+p{margin:0 0 .8em;overflow-wrap:anywhere;word-break:break-word}
+h1,h2,h3,h4{overflow-wrap:anywhere;word-break:break-word;line-break:auto}
+b,strong,em,span{overflow-wrap:inherit;word-break:inherit}
+button{font:inherit}
+
+/* ===== HELPERS ===== */
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(20px,4.5vw,48px)}
+section{padding:clamp(64px,10vw,120px) 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.24em;color:var(--g);text-transform:uppercase;margin:0 0 20px;padding:0}
+.eyebrow::before{content:"";display:inline-block;width:22px;height:1px;background:currentColor}
+.sec-title{font-family:var(--serif);font-size:clamp(26px,4.6vw,44px);line-height:1.45;font-weight:900;margin:0 0 14px;letter-spacing:.04em;color:var(--ink)}
+.sec-title em{font-style:normal;color:var(--g-deep)}
+.sec-title .hl{background:linear-gradient(transparent 60%,rgba(201,163,78,.3) 60%)}
+.sec-sub{color:var(--ink-soft);font-size:clamp(14px,1.7vw,16.5px);line-height:1.95;max-width:760px;margin:0 0 44px}
+.sec-sub b{color:var(--ink)}
+
+/* ===== DECORATIVE LEAVES ===== */
+.leaf{position:absolute;pointer-events:none;z-index:0;opacity:.55}
+
+/* ===== HERO ===== */
+.hero{
+  background:
+    radial-gradient(ellipse at 85% 18%,rgba(184,212,184,.55) 0%,transparent 55%),
+    radial-gradient(ellipse at 8% 95%,rgba(232,240,229,.8) 0%,transparent 60%),
+    linear-gradient(168deg,#F3F8EE 0%,#E6EFE0 100%);
+  padding:clamp(60px,10vw,120px) 0 clamp(80px,12vw,140px);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(circle at 50% 50%,rgba(74,123,90,.06) 1px,transparent 1.2px);
+  background-size:22px 22px;mask-image:radial-gradient(ellipse at center,#000 40%,transparent 85%);
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 40%,transparent 85%);
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:clamp(32px,5vw,56px);align-items:center}
+.hero-l .eyebrow{color:var(--g-deep)}
+.hero-l .brand{display:inline-flex;align-items:center;gap:12px;margin-bottom:clamp(20px,3.5vw,36px)}
+.hero-l .brand img{height:28px;width:auto}
+.hero-l .brand .tag{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.25em;color:var(--g);padding-left:14px;border-left:1px solid var(--g-mint)}
+.hero-title{font-family:var(--serif);font-weight:900;line-height:1.2;letter-spacing:.04em;margin:0 0 20px;color:var(--g-darker);font-size:clamp(40px,8.2vw,80px)}
+.hero-title .a{color:var(--g-deep);position:relative;display:inline-block}
+.hero-title .a::after{content:"";position:absolute;left:4%;right:4%;bottom:-4px;height:4px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border-radius:3px}
+.hero-sub{font-size:clamp(15px,2vw,18px);font-weight:700;color:var(--g-deep);margin:0 0 14px;letter-spacing:.05em}
+.hero-lead{font-size:clamp(14px,1.7vw,16px);color:var(--ink-soft);line-height:1.95;margin:0 0 32px;max-width:560px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(28px,4vw,40px)}
+.hero-meta .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--bg-card);border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--g-deep);box-shadow:var(--sh-sm)}
+.hero-meta .pill.accent{background:var(--g-deep);color:#F7F4E8;border-color:var(--g-deep)}
+.hero-meta .pill .dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7}
+.hero-period{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:14px;background:var(--bg-card);padding:18px 26px;border-radius:var(--r);box-shadow:var(--sh);border:1px solid var(--line)}
+.hero-period .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--g);font-weight:700}
+.hero-period .date{font-family:var(--mono);font-size:clamp(20px,3.2vw,26px);font-weight:800;color:var(--g-darker);letter-spacing:.04em}
+.hero-period .days{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--gold-deep);padding:4px 10px;border:1px solid var(--gold);border-radius:999px;letter-spacing:.1em}
+
+.hero-r{position:relative;min-height:280px;display:flex;align-items:center;justify-content:center}
+.hero-stage{position:relative;width:100%;max-width:460px;aspect-ratio:1/1}
+.hero-stage svg.bg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.hero-products{position:relative;z-index:2;width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;gap:clamp(4px,1vw,12px);padding:0 8%}
+.hero-products img{object-fit:contain;object-position:bottom;filter:drop-shadow(0 14px 28px rgba(46,80,56,.22));transition:transform .4s ease}
+.hero-products img.lotion{height:72%;z-index:1;margin-bottom:4%}
+.hero-products img.gel{height:82%;z-index:3}
+.hero-products img.sample{height:58%;z-index:2;margin-bottom:14%}
+
+@media (max-width:640px){
+  .hero-products img.lotion{max-width:28%;max-height:220px;height:auto}
+  .hero-products img.gel{max-width:32%;max-height:240px;height:auto}
+  .hero-products img.sample{max-width:22%;max-height:170px;height:auto}
+  .hero-stage{max-width:360px}
+  .hero-r{min-height:300px}
+}
+@media (min-width:860px){
+  .hero-inner{grid-template-columns:1.15fr 1fr}
+  .hero-r{min-height:460px}
+}
+
+/* ===== NAV (anchor) ===== */
+.nav{position:sticky;top:0;z-index:30;background:rgba(237,243,232,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
+.nav-inner{display:flex;gap:4px;overflow-x:auto;padding:10px clamp(20px,4.5vw,48px);max-width:1180px;margin:0 auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-inner a{flex-shrink:0;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--ink-soft);border-radius:999px;white-space:nowrap;transition:all .2s}
+.nav-inner a:hover{background:var(--bg-card);color:var(--g-deep)}
+
+/* ===== WHY NOW ===== */
+.why{background:var(--bg-soft)}
+.why-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.why-text p{font-size:15px;color:var(--ink-soft);line-height:2}
+.why-text p b{color:var(--ink)}
+.why-card{background:var(--g-deep);color:#F7F4E8;border-radius:var(--r);padding:clamp(24px,3.5vw,36px);position:relative;overflow:hidden}
+.why-card::before{content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(228,201,133,.18) 0%,transparent 70%)}
+.why-card .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--gold-light);font-weight:700;margin-bottom:12px}
+.why-card h3{color:#fff;font-family:var(--serif);font-size:clamp(18px,2.4vw,22px);font-weight:700;margin:0 0 18px;letter-spacing:.04em}
+.why-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px}
+.why-card li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:flex-start;font-size:14px;line-height:1.8}
+.why-card li .chip{font-family:var(--mono);font-size:10px;font-weight:800;padding:3px 9px;border-radius:6px;background:var(--gold);color:var(--g-darker);letter-spacing:.08em;margin-top:3px;white-space:nowrap}
+.why-card li b{color:#fff;font-weight:800}
+.why-card li span.ts{color:rgba(247,244,232,.82)}
+
+/* Timeline mini */
+.timeline{display:grid;grid-template-columns:1fr;gap:14px;margin-top:40px}
+.tl-node{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;text-align:left;position:relative}
+.tl-node.now{background:var(--g-deep);color:#fff;border-color:var(--g-deep)}
+.tl-node.now .tl-phase{color:var(--gold-light)}
+.tl-node.now .tl-date{color:#fff}
+.tl-node.now .tl-name{color:#fff}
+.tl-node .tl-phase{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--g);font-weight:700;margin-bottom:6px}
+.tl-node .tl-date{font-family:var(--mono);font-size:15px;font-weight:800;color:var(--ink);letter-spacing:.03em}
+.tl-node .tl-name{font-size:14px;font-weight:800;margin-top:4px;color:var(--ink);line-height:1.5}
+.tl-node .tl-tag{display:inline-block;font-family:var(--mono);font-size:10px;padding:3px 9px;margin-top:10px;border-radius:999px;background:var(--g-pale);color:var(--g-deep);letter-spacing:.08em}
+.tl-node.now .tl-tag{background:rgba(228,201,133,.2);color:var(--gold-light)}
+
+@media (min-width:760px){
+  .why-grid{grid-template-columns:1.2fr 1fr;gap:36px;align-items:stretch}
+  .timeline{grid-template-columns:repeat(3,1fr);gap:14px}
+  .tl-node.now{transform:scale(1.04);box-shadow:var(--sh)}
+}
+
+/* ===== CAMPAIGN MAP ===== */
+.map{background:var(--bg)}
+.map-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.map-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3.5vw,28px);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.map-card:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--g-soft)}
+.map-card .m-ico{width:96px;height:110px;border-radius:var(--r-sm);background:linear-gradient(160deg,var(--bg-pale),var(--g-pale));display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;position:relative}
+.map-card.warm .m-ico{background:linear-gradient(160deg,#FFF5E8,var(--warm-soft))}
+.map-card .m-ico img{max-height:92px;max-width:72px;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(46,80,56,.22));position:relative;z-index:2}
+.map-card .m-ico::before{content:"";position:absolute;bottom:6px;left:50%;transform:translateX(-50%);width:60%;height:6px;border-radius:50%;background:rgba(46,80,56,.15);filter:blur(3px);z-index:1}
+.map-card .m-no{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.22em;color:var(--g);margin-bottom:4px}
+.map-card.warm .m-no{color:var(--warm-deep)}
+.map-card .m-label{font-size:12px;color:var(--ink-soft);margin-bottom:2px}
+.map-card .m-text{font-size:15px;font-weight:800;color:var(--ink);line-height:1.55}
+.map-card .m-text b{color:var(--g-deep);font-weight:900}
+.map-card.warm .m-text b{color:var(--warm-deep)}
+@media (min-width:640px){
+  .map-grid{grid-template-columns:1fr 1fr}
+}
+.map-head{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px}
+.map-head-col{border-left:3px solid var(--g);padding:2px 0 2px 14px}
+.map-head-col.warm{border-color:var(--warm)}
+.map-head-col .tag{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--g);font-weight:700;margin-bottom:4px}
+.map-head-col.warm .tag{color:var(--warm-deep)}
+.map-head-col h3{font-family:var(--serif);font-size:18px;font-weight:900;color:var(--ink);letter-spacing:.04em}
+@media (min-width:760px){.map-head{grid-template-columns:1fr 1fr;gap:32px}}
+
+/* ===== BENEFIT DETAIL (shared) ===== */
+.detail-spring{background:linear-gradient(180deg,var(--bg-pale) 0%,var(--bg-soft) 100%)}
+.detail-summer{background:var(--bg-soft)}
+.detail-mix{background:var(--bg)}
+
+.benefit{display:grid;grid-template-columns:1fr;gap:24px;background:var(--bg-card);border-radius:var(--r-lg);padding:clamp(22px,3.5vw,36px);box-shadow:var(--sh-sm);border:1px solid var(--line);margin-bottom:22px;position:relative;overflow:hidden}
+.benefit::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--g),var(--g-deep))}
+.benefit.warm::before{background:linear-gradient(180deg,var(--warm),var(--warm-deep))}
+.benefit-visual{position:relative;background:var(--bg-pale);border-radius:var(--r);padding:24px 20px;min-height:220px;align-self:stretch;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.benefit.warm .benefit-visual{background:linear-gradient(160deg,#FFF5E8 0%,#FDE8D1 100%)}
+.benefit-visual img{max-height:200px;object-fit:contain;filter:drop-shadow(0 10px 22px rgba(46,80,56,.2));position:relative;z-index:2}
+.benefit-visual .chip{position:absolute;top:14px;right:14px;background:var(--bg-card);border:1px solid var(--line);font-family:var(--mono);font-size:10px;font-weight:800;padding:5px 10px;border-radius:999px;color:var(--g-deep);letter-spacing:.1em;z-index:3}
+.benefit.warm .benefit-visual .chip{color:var(--warm-deep);border-color:var(--warm-soft)}
+.benefit-body .b-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;padding:5px 12px;border-radius:999px;background:var(--g-pale);color:var(--g-deep);font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.benefit.warm .benefit-body .b-tag{background:var(--warm-soft);color:var(--warm-deep)}
+.benefit-body .b-trigger{font-size:14px;color:var(--ink-soft);margin:0 0 8px}
+.benefit-body h3{font-family:var(--serif);font-size:clamp(20px,3vw,28px);font-weight:900;line-height:1.5;margin:0 0 12px;letter-spacing:.03em}
+.benefit-body h3 .hl{color:var(--g-deep)}
+.benefit.warm .benefit-body h3 .hl{color:var(--warm-deep)}
+.benefit-body .b-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.benefit-body .b-meta span{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;padding:5px 11px;border-radius:8px;background:var(--line-soft);color:var(--ink-soft)}
+@media (min-width:720px){
+  .benefit{grid-template-columns:260px 1fr;gap:32px;align-items:center}
+}
+
+/* ===== FLOW DIAGRAM (黄金法則) ===== */
+.flow-section{background:var(--bg-soft);position:relative;overflow:hidden}
+.flow-wrap{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+.flow-illust{background:linear-gradient(160deg,#E8F0E5 0%,#DCE9D8 100%);border-radius:var(--r-lg);padding:28px;position:relative;min-height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.flow-illust svg{width:100%;height:auto;max-width:320px;position:relative;z-index:2}
+.flow-illust::before{content:"";position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.5))}
+.flow-diagram{display:flex;flex-direction:column;gap:12px;position:relative}
+.flow-node{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;position:relative;box-shadow:var(--sh-sm)}
+.flow-node .fn-no{width:36px;height:36px;border-radius:50%;background:var(--g-deep);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:14px;font-weight:800;flex-shrink:0}
+.flow-node.highlight{background:var(--g-deep);color:#fff;border-color:var(--g-deep)}
+.flow-node.highlight .fn-no{background:var(--gold);color:var(--g-darker)}
+.flow-node.highlight .fn-ttl{color:#fff}
+.flow-node.highlight .fn-desc{color:rgba(247,244,232,.85)}
+.flow-node .fn-ttl{font-size:14.5px;font-weight:800;color:var(--ink);line-height:1.5;margin:0 0 3px}
+.flow-node .fn-desc{font-size:12.5px;color:var(--ink-soft);line-height:1.65;margin:0}
+.flow-node .fn-ttl b{color:var(--g-deep)}
+.flow-node.highlight .fn-ttl b{color:var(--gold-light)}
+.flow-arrow{display:flex;justify-content:center;color:var(--g-soft)}
+.flow-arrow svg{width:28px;height:20px}
+@media (min-width:860px){.flow-wrap{grid-template-columns:1fr 1.4fr;gap:48px}}
+
+/* ===== BUNDLE ===== */
+.bundle{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch;margin:10px 0}
+.bundle-side{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:20px 14px;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.bundle-side .bs-chip{position:absolute;top:10px;right:10px;font-family:var(--mono);font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px;background:var(--g-deep);color:var(--gold-light);letter-spacing:.06em}
+.bundle.warm .bundle-side .bs-chip{background:var(--warm-deep);color:#fff}
+.bundle-side img{max-height:110px;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(46,80,56,.18))}
+.bundle-side .bs-lbl{font-size:12px;font-weight:800;color:var(--ink);line-height:1.5}
+.bundle-side .bs-lbl small{display:block;font-weight:500;color:var(--ink-soft);font-size:11px;margin-top:2px}
+.bundle-plus{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:26px;font-weight:800;color:var(--gold-deep)}
+.bundle-note{margin-top:12px;padding:10px 14px;background:var(--bg-pale);border-radius:var(--r-sm);font-size:12.5px;font-weight:700;color:var(--g-deep);text-align:center;letter-spacing:.03em}
+.bundle.warm + .bundle-note,.benefit.warm .bundle-note{background:var(--warm-soft);color:var(--warm-deep)}
+
+/* ===== SALON USAGE ===== */
+.salon{background:var(--bg-soft)}
+.salon-wrap{display:grid;grid-template-columns:1fr;gap:28px}
+.salon-illust{background:linear-gradient(160deg,#F5F1E8 0%,#E8E0D0 100%);border-radius:var(--r-lg);padding:28px;min-height:260px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.salon-illust svg{width:100%;max-width:340px;height:auto}
+.salon-points{display:flex;flex-direction:column;gap:14px}
+.salon-point{background:var(--bg-card);border-left:4px solid var(--warm);border-radius:var(--r);padding:18px 22px;box-shadow:var(--sh-sm)}
+.salon-point .sp-ico{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--warm-soft);color:var(--warm-deep);font-family:var(--mono);font-weight:800;font-size:14px;margin-bottom:10px}
+.salon-point h4{font-family:var(--serif);font-size:17px;font-weight:900;margin:0 0 6px;color:var(--ink);letter-spacing:.04em}
+.salon-point p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.85}
+@media (min-width:860px){.salon-wrap{grid-template-columns:1fr 1fr;gap:40px;align-items:center}}
+
+/* ===== KPI ===== */
+.kpi{background:var(--bg)}
+.kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.kpi-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,28px);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.kpi-card:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.kpi-card .k-num{font-family:var(--mono);font-size:clamp(36px,6vw,54px);font-weight:800;line-height:1;color:var(--g-deep);letter-spacing:-.01em;margin-bottom:6px}
+.kpi-card .k-num .u{font-size:.55em;margin-left:2px;color:var(--g-soft);font-weight:700}
+.kpi-card .k-label{font-size:13px;font-weight:800;color:var(--ink);letter-spacing:.04em;margin-bottom:6px}
+.kpi-card .k-desc{font-size:12px;color:var(--ink-soft);line-height:1.75;margin:0}
+.kpi-card.warm .k-num{color:var(--warm-deep)}
+.kpi-card.warm .k-num .u{color:var(--warm)}
+.kpi-card .k-dot{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--gold-deep);text-transform:uppercase}
+@media (min-width:760px){.kpi-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+
+/* ===== ACTION STEPS ===== */
+.action{background:var(--g-deep);color:#F5F2E4;position:relative;overflow:hidden}
+.action::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse at 90% 10%,rgba(228,201,133,.14),transparent 50%),
+  radial-gradient(ellipse at 5% 90%,rgba(184,212,184,.12),transparent 55%);
+  z-index:0;pointer-events:none}
+.action .wrap{position:relative;z-index:2}
+.action .eyebrow{color:var(--gold-light)}
+.action .sec-title{color:#fff}
+.action .sec-title em{color:var(--gold-light)}
+.action .sec-sub{color:rgba(247,244,232,.85)}
+.action-list{display:flex;flex-direction:column;gap:14px;max-width:860px;margin:0 auto}
+.action-item{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:20px 22px;background:rgba(255,255,255,.04);border:1px solid rgba(228,201,133,.18);border-radius:var(--r);backdrop-filter:blur(6px);transition:all .25s}
+.action-item:hover{background:rgba(255,255,255,.08);border-color:var(--gold-light)}
+.action-item .ai-no{font-family:var(--mono);font-size:32px;font-weight:800;color:var(--gold-light);line-height:1;width:56px;flex-shrink:0}
+.action-item h4{font-size:16px;font-weight:800;color:#fff;margin:0 0 6px;letter-spacing:.04em}
+.action-item p{font-size:13.5px;color:rgba(247,244,232,.82);margin:0;line-height:1.85}
+.action-item p b{color:#fff}
+
+/* ===== CLOSE ===== */
+.close{
+  background:
+    radial-gradient(ellipse at 75% 25%,rgba(228,201,133,.18),transparent 55%),
+    linear-gradient(165deg,#1F3927 0%,#2E5038 55%,#3E6B48 100%);
+  color:#fff;text-align:center;padding:clamp(80px,12vw,140px) 0;position:relative;overflow:hidden;
+}
+.close::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 50% 50%,rgba(228,201,133,.06) 1px,transparent 1.2px);background-size:28px 28px;opacity:.4;pointer-events:none}
+.close .wrap{position:relative;z-index:2}
+.close .eyebrow{color:var(--gold-light);justify-content:center}
+.close .eyebrow::before{display:none}
+.close h2{font-family:var(--serif);font-size:clamp(28px,5.2vw,52px);font-weight:900;line-height:1.5;letter-spacing:.06em;margin:0 0 20px;color:#fff}
+.close h2 .a{color:var(--gold-light)}
+.close .close-lead{font-size:15px;color:rgba(247,244,232,.88);line-height:2;margin:0 auto 40px;max-width:580px}
+.close-period{display:inline-flex;flex-direction:column;align-items:center;gap:8px;padding:28px 44px;background:rgba(255,255,255,.06);border:1px solid rgba(228,201,133,.4);border-radius:var(--r-lg);backdrop-filter:blur(8px);margin-bottom:40px}
+.close-period .cp-lbl{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--gold-light);font-weight:700;text-transform:uppercase}
+.close-period .cp-date{font-family:var(--mono);font-size:clamp(24px,4.6vw,40px);font-weight:800;letter-spacing:.02em;color:#fff}
+.close-period .cp-days{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold-light);padding-top:4px;border-top:1px solid rgba(228,201,133,.3);min-width:180px}
+.close-sig{padding-top:28px;border-top:1px solid rgba(228,201,133,.2);display:flex;flex-direction:column;align-items:center;gap:10px;max-width:280px;margin:0 auto}
+.close-sig img{height:30px;filter:brightness(0) invert(1);opacity:.85}
+.close-sig .sg-tag{font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:rgba(228,201,133,.6);font-weight:700}
+
+/* ===== FOOTER ===== */
+.foot{background:var(--bg);text-align:center;padding:28px 20px;border-top:1px solid var(--line-soft)}
+.foot p{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-muted);margin:0}
+
+/* ===== PRINT ===== */
+@media print{
+  @page{size:A4 landscape;margin:10mm}
+  html,body{background:#fff}
+  .nav{display:none}
+  section{padding:24px 0;page-break-inside:avoid;break-inside:avoid}
+  .hero{padding:24px 0}
+  .benefit,.map-card,.kpi-card,.action-item{page-break-inside:avoid;break-inside:avoid}
+}
+
+/* ===== MOBILE TEXT SAFEGUARDS ===== */
+@media (max-width:640px){
+  p, h2, h3, h4, li, .sec-sub, .hero-lead, .hero-sub, .close-lead, .fn-ttl, .fn-desc, .salon-point p, .action-item p, .kpi-card .k-desc, .why-text p, .why-card li, .map-card .m-text, .benefit-body h3, .benefit-body p, .tl-name{
+    word-break:break-word;
+    overflow-wrap:anywhere;
+    line-break:auto;
+  }
+  p b, p strong, li b, li strong, h3 b, h3 strong{
+    word-break:inherit;
+    overflow-wrap:inherit;
+  }
+  .close-lead br{display:none}
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms !important;transition-duration:0.01ms !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================= -->
+<!-- HERO -->
+<!-- ============================================================= -->
+<header class="hero">
+  <!-- Decorative leaves -->
+  <svg class="leaf" style="top:40px;left:-30px;width:180px" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#B8D4B8" opacity=".55">
+      <path d="M 80 240 Q 30 180 40 110 Q 55 40 110 20 Q 135 70 130 130 Q 120 200 80 240 Z"/>
+      <path d="M 85 240 Q 85 150 85 60" stroke="#7DA88B" stroke-width="1.5" fill="none" opacity=".7"/>
+    </g>
+    <g fill="#7DA88B" opacity=".4">
+      <ellipse cx="60" cy="80" rx="22" ry="40" transform="rotate(-40 60 80)"/>
+      <ellipse cx="120" cy="150" rx="20" ry="36" transform="rotate(35 120 150)"/>
+    </g>
+  </svg>
+  <svg class="leaf" style="top:-40px;right:6%;width:240px" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#B8D4B8" opacity=".4">
+      <path d="M 100 250 Q 50 200 50 120 Q 60 40 120 20 Q 150 60 150 130 Q 145 210 100 250 Z"/>
+    </g>
+    <g fill="#7DA88B" opacity=".35">
+      <ellipse cx="70" cy="100" rx="18" ry="34" transform="rotate(-30 70 100)"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-l">
+        <div class="brand">
+          <img src="assets/verlis-logo.png" alt="VERLiS">
+          <span class="tag">MAGWARICH CAMPAIGN 2025</span>
+        </div>
+        <span class="eyebrow">2-Month Intensive Campaign</span>
+        <h1 class="hero-title">育てる春、<br><span class="a">届ける夏。</span></h1>
+        <p class="hero-sub">VERLiS マグワリッチ 2ヶ月集中キャンペーン</p>
+        <p class="hero-lead">新規紹介で組織を <b>縦に掘る</b> 施策と、小売で商品を <b>届ける</b> 施策。<br>2つのエンジンで、この60日間を最大の加速期間に。</p>
+
+        <div class="hero-meta">
+          <span class="pill accent"><span class="dot"></span>期間限定</span>
+          <span class="pill">2大テーマ</span>
+          <span class="pill">4大特典</span>
+        </div>
+
+        <div class="hero-period">
+          <span class="lbl">PERIOD</span>
+          <span class="date">5.7 → 6.30</span>
+          <span class="days">60 DAYS</span>
+        </div>
+      </div>
+
+      <div class="hero-r">
+        <div class="hero-stage">
+          <svg class="bg" viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <radialGradient id="stage-g" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#F5F9F1"/>
+                <stop offset="60%" stop-color="#DCE9D8"/>
+                <stop offset="100%" stop-color="#B8D4B8"/>
+              </radialGradient>
+            </defs>
+            <!-- big leaf cluster -->
+            <g opacity=".65" fill="#8AAF94">
+              <ellipse cx="90" cy="140" rx="45" ry="85" transform="rotate(-30 90 140)"/>
+              <ellipse cx="370" cy="180" rx="55" ry="95" transform="rotate(25 370 180)"/>
+              <ellipse cx="380" cy="340" rx="40" ry="70" transform="rotate(45 380 340)"/>
+              <ellipse cx="70" cy="340" rx="38" ry="65" transform="rotate(-35 70 340)"/>
+            </g>
+            <g opacity=".5" fill="#B8D4B8">
+              <ellipse cx="160" cy="90" rx="32" ry="58" transform="rotate(-20 160 90)"/>
+              <ellipse cx="310" cy="80" rx="30" ry="56" transform="rotate(20 310 80)"/>
+              <ellipse cx="230" cy="420" rx="120" ry="20" opacity=".7"/>
+            </g>
+            <!-- stage platform -->
+            <ellipse cx="230" cy="390" rx="180" ry="14" fill="#6B8F75" opacity=".25"/>
+          </svg>
+          <div class="hero-products">
+            <img class="lotion" src="assets/boost-lotion.png" alt="ブーストスキンローション">
+            <img class="gel" src="assets/magwarich-gel.png" alt="マグワリッチ 美容ジェル">
+            <img class="sample" src="assets/magwarich-sample.png" alt="美容ジェル サンプル">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================= -->
+<!-- NAV -->
+<!-- ============================================================= -->
+<nav class="nav" aria-label="section navigation">
+  <div class="nav-inner">
+    <a href="#why">なぜ今</a>
+    <a href="#map">全体像</a>
+    <a href="#theme1">組織構築</a>
+    <a href="#flow">黄金法則</a>
+    <a href="#theme2">小売促進</a>
+    <a href="#salon">サロン活用</a>
+    <a href="#kpi">KPI</a>
+    <a href="#action">アクション</a>
+  </div>
+</nav>
+
+<!-- ============================================================= -->
+<!-- 1. WHY NOW -->
+<!-- ============================================================= -->
+<section id="why" class="why">
+  <div class="wrap">
+    <span class="eyebrow">01 / Campaign Vision</span>
+    <h2 class="sec-title">なぜ今、<em>このキャンペーン</em>が必要か</h2>
+    <p class="sec-sub">4月末でペイフォワードキャンペーンが終了し、次の大型施策は7月から。この<b>5月〜6月の"空白"を、組織成長の助走期間に変える</b>ための2ヶ月集中プログラムです。</p>
+
+    <div class="why-grid">
+      <div class="why-text">
+        <p><b>スケジュールの空白を埋める。</b></p>
+        <p>4月にペイフォワードキャンペーンが終了し、次の大型施策は7月スタート予定。このまま2ヶ月モメンタムを止めれば、春に築いた流れが一度リセットされます。</p>
+        <p>この期間にメンタム維持・加速のための施策を、マグワリッチ × ブーストスキンローション × 組織成長 の3軸で設計しました。</p>
+      </div>
+      <div class="why-card">
+        <div class="lbl">CAMPAIGN'S 2 CORE GOALS</div>
+        <h3>キャンペーンの2大目的</h3>
+        <ul>
+          <li>
+            <span class="chip">01</span>
+            <div><b>組織構築:</b> <span class="ts">新規紹介を増やし、ネットワークを縦に深める</span></div>
+          </li>
+          <li>
+            <span class="chip">02</span>
+            <div><b>小売促進:</b> <span class="ts">店舗やサロンで活用し、プラスアルファ収益の底上げ</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-node">
+        <div class="tl-phase">Past</div>
+        <div class="tl-date">〜 4月30日</div>
+        <div class="tl-name">ペイフォワードキャンペーン</div>
+        <span class="tl-tag">終了</span>
+      </div>
+      <div class="tl-node now">
+        <div class="tl-phase">★ Now</div>
+        <div class="tl-date">5月7日 — 6月30日</div>
+        <div class="tl-name">育てる春、届ける夏。</div>
+        <span class="tl-tag">60 DAYS 集中</span>
+      </div>
+      <div class="tl-node">
+        <div class="tl-phase">Next</div>
+        <div class="tl-date">7月 〜</div>
+        <div class="tl-name">次期施策スタート</div>
+        <span class="tl-tag">待機</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 2. CAMPAIGN MAP (全体像) -->
+<!-- ============================================================= -->
+<section id="map" class="map">
+  <div class="wrap">
+    <span class="eyebrow">02 / Campaign Overview</span>
+    <h2 class="sec-title"><em>一目でわかる</em>、特典マップ</h2>
+    <p class="sec-sub">組織構築と小売促進の<b>2テーマ × 4特典</b>を、1枚で俯瞰。<br>それぞれのカードが独立して価値を持ち、重ねることでさらに効果を発揮します。</p>
+
+    <div class="map-head">
+      <div class="map-head-col">
+        <div class="tag">THEME 01 / 育てる春</div>
+        <h3>組織構築を加速する</h3>
+      </div>
+      <div class="map-head-col warm">
+        <div class="tag">THEME 02 / 届ける夏</div>
+        <h3>小売収益を後押しする</h3>
+      </div>
+    </div>
+
+    <div class="map-grid">
+      <div class="map-card">
+        <div class="m-ico"><img src="assets/magwarich-sample.png" alt=""></div>
+        <div>
+          <div class="m-no">特典 A / 組織構築</div>
+          <div class="m-label">新規ビジネス会員登録で</div>
+          <div class="m-text"><b>美容ジェルサンプル 30g</b> ×1本<br>を非売品プレゼント</div>
+        </div>
+      </div>
+      <div class="map-card">
+        <div class="m-ico"><img src="assets/magwarich-gel.png" alt=""></div>
+        <div>
+          <div class="m-no">特典 B / 組織構築</div>
+          <div class="m-label">縦ライン2人達成で</div>
+          <div class="m-text"><b>美容ジェル正規品 75g</b> ×1本<br>を起点会員にプレゼント</div>
+        </div>
+      </div>
+      <div class="map-card warm">
+        <div class="m-ico"><img src="assets/boost-lotion.png" alt=""></div>
+        <div>
+          <div class="m-no">特典 C / 小売促進</div>
+          <div class="m-label">美容ジェル 6本入購入で</div>
+          <div class="m-text"><b>ブーストスキンローション ×6本</b><br>を特典同梱</div>
+        </div>
+      </div>
+      <div class="map-card warm">
+        <div class="m-ico"><img src="assets/magwarich-sample.png" alt=""></div>
+        <div>
+          <div class="m-no">特典 D / 小売促進</div>
+          <div class="m-label">ローション 6本入購入で</div>
+          <div class="m-text"><b>非売品サンプル 30g ×6本</b><br>を特典同梱</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 3. THEME 01 — 組織構築 特典 -->
+<!-- ============================================================= -->
+<section id="theme1" class="detail-spring">
+  <div class="wrap">
+    <span class="eyebrow">THEME 01 / 育てる春</span>
+    <h2 class="sec-title"><em>組織構築</em>を加速する: <span class="hl">新規紹介2大特典</span></h2>
+    <p class="sec-sub">新規入会のハードルを下げ、縦ラインに2人つなぐ行動を特典でブースト。<b>"まず2レベルまで一気につなげる"</b>動機をつくります。</p>
+
+    <!-- Benefit A -->
+    <div class="benefit">
+      <div class="benefit-visual">
+        <span class="chip">非売品 / 30g</span>
+        <img src="assets/magwarich-sample.png" alt="美容ジェル サンプル 30g">
+      </div>
+      <div class="benefit-body">
+        <span class="b-tag">特典 A — 入会即プレゼント</span>
+        <p class="b-trigger">新規でビジネス会員に登録されたすべての方へ</p>
+        <h3><span class="hl">非売品 美容ジェルサンプル 30g</span><br>×1本を贈呈</h3>
+        <div class="b-meta">
+          <span>対象: プレミア</span>
+          <span>対象: ベーシック</span>
+          <span>対象: お試し</span>
+          <span>非売品</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benefit B -->
+    <div class="benefit">
+      <div class="benefit-visual">
+        <span class="chip">正規品 / 75g</span>
+        <img src="assets/magwarich-gel.png" alt="美容ジェル 75g">
+      </div>
+      <div class="benefit-body">
+        <span class="b-tag">特典 B — 縦2人達成でご褒美</span>
+        <p class="b-trigger">起点会員の縦ラインに新規2人が繋がったら</p>
+        <h3><span class="hl">マグワリッチ美容ジェル 75g</span><br>×1本を贈呈</h3>
+        <div class="b-meta">
+          <span>対象: 起点会員</span>
+          <span>縦 2LEVEL 達成</span>
+          <span>正規品</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 4. 縦に掘る:黄金法則 -->
+<!-- ============================================================= -->
+<section id="flow" class="flow-section">
+  <div class="wrap">
+    <span class="eyebrow">03 / Golden Rule</span>
+    <h2 class="sec-title"><em>縦に掘る</em>: 組織構築の<span class="hl">黄金法則</span></h2>
+    <p class="sec-sub">組織を横に広げるだけでは、ラインボーナスは最大化しません。<b>2レベル目にお試し会員がつながった瞬間、ボーナス率が20%へ</b>。まずは縦2レベルを一気に繋ぐ — これがこの2ヶ月で最も重要な行動目標です。</p>
+
+    <div class="flow-wrap">
+      <!-- Illustration: Two people shaking hands -->
+      <div class="flow-illust">
+        <svg viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="skin-a" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F2CBA6"/>
+              <stop offset="1" stop-color="#D9A274"/>
+            </linearGradient>
+            <linearGradient id="skin-b" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F4D2AE"/>
+              <stop offset="1" stop-color="#DCA57B"/>
+            </linearGradient>
+            <linearGradient id="suit-a" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4A7B5A"/>
+              <stop offset="1" stop-color="#2E5038"/>
+            </linearGradient>
+            <linearGradient id="suit-b" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#5B8C6A"/>
+              <stop offset="1" stop-color="#3E6B48"/>
+            </linearGradient>
+            <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FDFCF4"/>
+              <stop offset="1" stop-color="#EFEAD4"/>
+            </linearGradient>
+            <radialGradient id="spot" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#E4C985" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#E4C985" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- background leaves / decor -->
+          <g opacity=".35">
+            <ellipse cx="36" cy="70" rx="26" ry="52" fill="#7DA88B" transform="rotate(-22 36 70)"/>
+            <ellipse cx="60" cy="150" rx="18" ry="34" fill="#B8D4B8" transform="rotate(30 60 150)"/>
+            <ellipse cx="324" cy="90" rx="28" ry="54" fill="#7DA88B" transform="rotate(22 324 90)"/>
+            <ellipse cx="300" cy="180" rx="20" ry="38" fill="#B8D4B8" transform="rotate(-25 300 180)"/>
+          </g>
+
+          <!-- ground shadow -->
+          <ellipse cx="180" cy="300" rx="140" ry="10" fill="#3E6B48" opacity=".18"/>
+          <!-- handshake glow behind -->
+          <circle cx="180" cy="172" r="54" fill="url(#spot)"/>
+
+          <!-- Person A (left) -->
+          <g>
+            <!-- legs -->
+            <rect x="108" y="238" width="16" height="60" rx="5" fill="#2A3A30"/>
+            <rect x="130" y="238" width="16" height="60" rx="5" fill="#2A3A30"/>
+            <!-- shoes -->
+            <ellipse cx="116" cy="298" rx="12" ry="5" fill="#1B2620"/>
+            <ellipse cx="138" cy="298" rx="12" ry="5" fill="#1B2620"/>
+            <!-- torso (suit) -->
+            <path d="M 92 150 Q 90 130 110 122 L 144 122 Q 164 130 162 150 L 166 240 L 88 240 Z" fill="url(#suit-a)"/>
+            <!-- shirt collar V -->
+            <path d="M 120 122 L 127 148 L 134 122 Z" fill="url(#shirt)"/>
+            <!-- tie -->
+            <path d="M 125 128 L 129 134 L 124 170 L 130 178 L 134 170 L 130 134 L 133 128 Z" fill="#C9A34E"/>
+            <!-- left arm (down) -->
+            <path d="M 92 150 Q 80 195 86 238 L 98 238 Q 105 195 110 162 Z" fill="url(#suit-a)"/>
+            <!-- right arm (extended to handshake) -->
+            <path d="M 160 154 Q 176 160 200 172 L 196 188 Q 170 180 150 172 Z" fill="url(#suit-a)"/>
+            <!-- right hand -->
+            <ellipse cx="200" cy="178" rx="14" ry="12" fill="url(#skin-a)"/>
+            <!-- shirt cuff accent -->
+            <path d="M 186 170 L 194 182 L 202 172 L 192 165 Z" fill="url(#shirt)" opacity=".8"/>
+            <!-- neck -->
+            <rect x="119" y="100" width="18" height="20" fill="url(#skin-a)"/>
+            <!-- head -->
+            <circle cx="128" cy="84" r="24" fill="url(#skin-a)"/>
+            <!-- hair -->
+            <path d="M 104 78 Q 106 58 128 56 Q 150 56 152 80 Q 150 68 136 66 Q 118 68 110 74 Q 106 78 104 78 Z" fill="#2B1E14"/>
+            <!-- eye + smile -->
+            <circle cx="122" cy="84" r="1.6" fill="#1B1309"/>
+            <circle cx="134" cy="84" r="1.6" fill="#1B1309"/>
+            <path d="M 122 93 Q 128 97 134 93" stroke="#1B1309" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- Person B (right) -->
+          <g>
+            <!-- legs -->
+            <rect x="214" y="238" width="16" height="60" rx="5" fill="#2A3A30"/>
+            <rect x="236" y="238" width="16" height="60" rx="5" fill="#2A3A30"/>
+            <ellipse cx="222" cy="298" rx="12" ry="5" fill="#1B2620"/>
+            <ellipse cx="244" cy="298" rx="12" ry="5" fill="#1B2620"/>
+            <!-- torso -->
+            <path d="M 198 150 Q 196 130 216 122 L 250 122 Q 270 130 268 150 L 272 240 L 194 240 Z" fill="url(#suit-b)"/>
+            <!-- shirt collar V -->
+            <path d="M 226 122 L 233 148 L 240 122 Z" fill="url(#shirt)"/>
+            <!-- pocket square -->
+            <rect x="246" y="148" width="10" height="6" fill="url(#shirt)" opacity=".7"/>
+            <!-- right arm (down) -->
+            <path d="M 268 150 Q 280 195 274 238 L 262 238 Q 255 195 250 162 Z" fill="url(#suit-b)"/>
+            <!-- left arm extended to handshake -->
+            <path d="M 200 154 Q 184 160 160 172 L 164 188 Q 190 180 210 172 Z" fill="url(#suit-b)"/>
+            <!-- left hand -->
+            <ellipse cx="160" cy="178" rx="14" ry="12" fill="url(#skin-b)"/>
+            <path d="M 174 170 L 166 182 L 158 172 L 168 165 Z" fill="url(#shirt)" opacity=".8"/>
+            <!-- neck -->
+            <rect x="225" y="100" width="18" height="20" fill="url(#skin-b)"/>
+            <!-- head -->
+            <circle cx="234" cy="84" r="24" fill="url(#skin-b)"/>
+            <!-- hair: wavy -->
+            <path d="M 210 80 Q 212 56 234 56 Q 258 56 258 80 Q 254 68 244 66 Q 226 62 216 72 Q 212 78 210 80 Z" fill="#3B2410"/>
+            <!-- eye + smile -->
+            <circle cx="228" cy="84" r="1.6" fill="#1B1309"/>
+            <circle cx="240" cy="84" r="1.6" fill="#1B1309"/>
+            <path d="M 228 93 Q 234 97 240 93" stroke="#1B1309" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- Handshake grip (drawn on top) -->
+          <g>
+            <ellipse cx="180" cy="176" rx="22" ry="14" fill="#E4C985" opacity=".35"/>
+            <path d="M 167 170 Q 180 166 193 170 L 194 184 Q 180 190 166 184 Z" fill="url(#skin-a)"/>
+            <path d="M 172 173 Q 180 170 188 173" stroke="#B8875F" stroke-width="1" fill="none" opacity=".6"/>
+          </g>
+
+          <!-- Success spark -->
+          <g fill="#C9A34E" opacity=".7">
+            <circle cx="180" cy="142" r="2"/>
+            <circle cx="168" cy="138" r="1.5"/>
+            <circle cx="192" cy="138" r="1.5"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Flow diagram -->
+      <div class="flow-diagram">
+        <div class="flow-node">
+          <div class="fn-no">1</div>
+          <div>
+            <div class="fn-ttl"><b>起点会社 (あなた)</b> が新規を1名誘う</div>
+            <p class="fn-desc">ブーストスキンローション お試し入会(5,000P)で最小ハードルに。</p>
+          </div>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 28 20" fill="none"><path d="M14 2 v16 m-6-6 l6 6 l6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="flow-node">
+          <div class="fn-no">2</div>
+          <div>
+            <div class="fn-ttl"><b>Lv.1の新規</b> がさらに1名を紹介</div>
+            <p class="fn-desc">サンプル30gが手元にあるのでライン使い体験談を語りやすい。</p>
+          </div>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 28 20" fill="none"><path d="M14 2 v16 m-6-6 l6 6 l6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="flow-node highlight">
+          <div class="fn-no">★</div>
+          <div>
+            <div class="fn-ttl"><b>縦2レベル達成</b> — 起点に3つのリターン</div>
+            <p class="fn-desc">正規品ジェル 75g + ラインボーナス20% + 組織の幹。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 5. 入会ハードルを下げるカギ -->
+<!-- ============================================================= -->
+<section id="lotion" class="detail-mix">
+  <div class="wrap">
+    <span class="eyebrow">04 / Low Entry Barrier</span>
+    <h2 class="sec-title"><em>入会ハードル</em>を下げるカギ:<br><span class="hl">ブーストスキンローション</span></h2>
+    <p class="sec-sub">4月新発売のブーストスキンローションは、<b>お試し入会 5,000Pという最小ハードル</b>で始められる唯一のアイテム。これで入会してもらい、特典のサンプルジェルと合わせて、正規品を買わずともライン使いが即スタート。</p>
+
+    <div class="benefit">
+      <div class="benefit-visual">
+        <span class="chip">Lotion / 5,000P</span>
+        <img src="assets/boost-lotion.png" alt="ブーストスキンローション">
+      </div>
+      <div class="benefit-body">
+        <span class="b-tag">入会ハードル最小の"鍵"</span>
+        <h3>お試し入会で <span class="hl">5,000P スタート</span>、<br>サンプル30gで即ライン使い体験</h3>
+        <p style="font-size:14px;color:var(--ink-soft);line-height:2;margin:8px 0 0">4月新発売の <b>ブーストスキンローション</b> をお試し入会で手に入れ、<b>入会特典の美容ジェルサンプル30g</b> と組み合わせれば、正規品を購入せずにローション+ジェルのライン使いが体験できる。</p>
+        <div class="b-meta">
+          <span>5,000P 入会</span>
+          <span>即ライン使い</span>
+          <span>新発売 2026.4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 6. THEME 02 — 小売促進 バンドル -->
+<!-- ============================================================= -->
+<section id="theme2" class="detail-summer">
+  <div class="wrap">
+    <span class="eyebrow">THEME 02 / 届ける夏</span>
+    <h2 class="sec-title"><em>小売促進</em>: 店舗・サロン向け <span class="hl">2大バンドル特典</span></h2>
+    <p class="sec-sub">美容室・エステサロンなど店舗を運営される方へ。<b>ライン使いで提案できる特典商品が、小売の単価と継続を押し上げます</b>。</p>
+
+    <!-- Benefit C -->
+    <div class="benefit warm">
+      <div class="benefit-visual">
+        <span class="chip">PURCHASE / 6本入</span>
+        <img src="assets/magwarich-gel.png" alt="美容ジェル 6本">
+      </div>
+      <div class="benefit-body">
+        <span class="b-tag">バンドル A — 美容ジェル6本セット購入</span>
+        <p class="b-trigger">マグワリッチ美容ジェル 6本入 ご購入で</p>
+        <h3><span class="hl">ブーストスキンローション ×6本</span><br>を特典プレゼント</h3>
+
+        <div class="bundle">
+          <div class="bundle-side">
+            <span class="bs-chip">× 6</span>
+            <img src="assets/magwarich-gel.png" alt="ジェル">
+            <div class="bs-lbl">美容ジェル 75g<small>6本入を購入</small></div>
+          </div>
+          <div class="bundle-plus">+</div>
+          <div class="bundle-side">
+            <span class="bs-chip">× 6</span>
+            <img src="assets/boost-lotion.png" alt="ローション">
+            <div class="bs-lbl">ローション<small>特典同梱</small></div>
+          </div>
+        </div>
+        <div class="bundle-note">ライン使い 1:1 セット ×6組 — サロン小売提案の最強フォーマット</div>
+      </div>
+    </div>
+
+    <!-- Benefit D -->
+    <div class="benefit warm">
+      <div class="benefit-visual">
+        <span class="chip">PURCHASE / 6本入</span>
+        <img src="assets/boost-lotion.png" alt="ローション 6本">
+      </div>
+      <div class="benefit-body">
+        <span class="b-tag">バンドル B — ローション6本セット購入</span>
+        <p class="b-trigger">ブーストスキンローション 6本入 ご購入で</p>
+        <h3><span class="hl">非売品 美容ジェルサンプル30g ×6本</span><br>を特典プレゼント</h3>
+
+        <div class="bundle warm">
+          <div class="bundle-side">
+            <span class="bs-chip">× 6</span>
+            <img src="assets/boost-lotion.png" alt="ローション">
+            <div class="bs-lbl">ローション<small>6本入を購入</small></div>
+          </div>
+          <div class="bundle-plus">+</div>
+          <div class="bundle-side">
+            <span class="bs-chip">× 6</span>
+            <img src="assets/magwarich-sample.png" alt="サンプル">
+            <div class="bs-lbl">サンプル 30g<small>非売品 / 特典</small></div>
+          </div>
+        </div>
+        <div class="bundle-note">非売品サンプルをお試し配布に — 次回購入へつなぐ店販導線</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 7. サロン活用 -->
+<!-- ============================================================= -->
+<section id="salon" class="salon">
+  <div class="wrap">
+    <span class="eyebrow">05 / Salon Use Case</span>
+    <h2 class="sec-title"><em>美容室・エステサロン</em>での<br><span class="hl">活用イメージ</span></h2>
+    <p class="sec-sub">単に仕入れるだけでなく、店舗運営の中で <b>小売・体験・収益の3つの側面</b> から機能するバンドル設計。サロンが既に持つ顧客接点を活かしきります。</p>
+
+    <div class="salon-wrap">
+      <div class="salon-illust">
+        <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="shelf-g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F5EEDE"/>
+              <stop offset="1" stop-color="#D9CAA7"/>
+            </linearGradient>
+            <linearGradient id="wall-g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FAF4E6"/>
+              <stop offset="1" stop-color="#EEE5CD"/>
+            </linearGradient>
+          </defs>
+          <!-- wall -->
+          <rect x="0" y="0" width="340" height="200" fill="url(#wall-g)"/>
+          <!-- floor -->
+          <rect x="0" y="200" width="340" height="80" fill="#D9CAA7"/>
+          <!-- shelves -->
+          <rect x="30" y="80" width="280" height="6" fill="url(#shelf-g)"/>
+          <rect x="30" y="140" width="280" height="6" fill="url(#shelf-g)"/>
+          <!-- products on top shelf -->
+          <g>
+            <rect x="50" y="48" width="18" height="32" rx="3" fill="#2E5038"/>
+            <rect x="76" y="42" width="22" height="38" rx="3" fill="#4A7B5A"/>
+            <rect x="106" y="50" width="16" height="30" rx="3" fill="#C9A34E"/>
+            <rect x="130" y="44" width="20" height="36" rx="3" fill="#2E5038"/>
+            <rect x="158" y="48" width="18" height="32" rx="3" fill="#5B8C6A"/>
+            <rect x="184" y="42" width="22" height="38" rx="3" fill="#4A7B5A"/>
+            <rect x="214" y="50" width="16" height="30" rx="3" fill="#7DA88B"/>
+            <rect x="238" y="46" width="20" height="34" rx="3" fill="#2E5038"/>
+            <rect x="266" y="50" width="16" height="30" rx="3" fill="#C9A34E"/>
+          </g>
+          <!-- products on bottom shelf -->
+          <g>
+            <rect x="50" y="108" width="16" height="32" rx="3" fill="#7DA88B"/>
+            <rect x="74" y="104" width="22" height="36" rx="3" fill="#2E5038"/>
+            <rect x="104" y="112" width="14" height="28" rx="3" fill="#4A7B5A"/>
+            <rect x="126" y="104" width="22" height="36" rx="3" fill="#5B8C6A"/>
+            <rect x="156" y="108" width="16" height="32" rx="3" fill="#C9A34E"/>
+            <rect x="182" y="104" width="22" height="36" rx="3" fill="#2E5038"/>
+            <rect x="214" y="110" width="14" height="30" rx="3" fill="#7DA88B"/>
+            <rect x="236" y="104" width="22" height="36" rx="3" fill="#4A7B5A"/>
+            <rect x="266" y="108" width="16" height="32" rx="3" fill="#5B8C6A"/>
+          </g>
+          <!-- salon counter -->
+          <rect x="80" y="170" width="180" height="70" rx="8" fill="#EDE0BF"/>
+          <rect x="80" y="170" width="180" height="10" rx="4" fill="#D9CAA7"/>
+          <!-- display items on counter -->
+          <rect x="110" y="140" width="14" height="30" rx="3" fill="#C9A34E"/>
+          <rect x="160" y="144" width="18" height="26" rx="3" fill="#2E5038"/>
+          <rect x="210" y="140" width="14" height="30" rx="3" fill="#4A7B5A"/>
+          <!-- plants -->
+          <g opacity=".85">
+            <path d="M 20 210 Q 30 170 40 210 Q 50 180 55 215" stroke="#5B8C6A" stroke-width="2.5" fill="none"/>
+            <ellipse cx="30" cy="195" rx="12" ry="20" fill="#7DA88B" opacity=".8"/>
+            <ellipse cx="45" cy="200" rx="10" ry="16" fill="#4A7B5A" opacity=".7"/>
+            <rect x="20" y="215" width="30" height="25" rx="3" fill="#8B7047"/>
+          </g>
+          <g opacity=".85">
+            <ellipse cx="310" cy="195" rx="14" ry="24" fill="#7DA88B" opacity=".8"/>
+            <ellipse cx="300" cy="205" rx="10" ry="18" fill="#4A7B5A" opacity=".7"/>
+            <rect x="290" y="215" width="30" height="25" rx="3" fill="#8B7047"/>
+          </g>
+          <!-- window light hint -->
+          <rect x="240" y="10" width="70" height="40" rx="4" fill="#FFFDF4" opacity=".7"/>
+          <line x1="275" y1="10" x2="275" y2="50" stroke="#E0D5B5" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <div class="salon-points">
+        <div class="salon-point">
+          <div class="sp-ico">01</div>
+          <h4>小売アイテムとして陳列</h4>
+          <p>美容ジェルとローションのセットを店頭に並べ、施設ご来店のホームケア提案として小売展開。</p>
+        </div>
+        <div class="salon-point">
+          <div class="sp-ico">02</div>
+          <h4>サンプルで体験提供</h4>
+          <p>バンドル B特典のサンプル 30gを施術後・購入時に無料配布し、次回購入への継続導線を設計。</p>
+        </div>
+        <div class="salon-point">
+          <div class="sp-ico">03</div>
+          <h4>収益の階層化</h4>
+          <p>ネットワーク報酬に加え、小売による直接収益を積み増すことで、より安定したビジネス基盤を構築。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 8. KPI -->
+<!-- ============================================================= -->
+<section id="kpi" class="kpi">
+  <div class="wrap">
+    <span class="eyebrow">06 / Campaign KPI</span>
+    <h2 class="sec-title">この期間で<em>達成したい</em>KPI</h2>
+    <p class="sec-sub">数字で追える4つのマイルストーン。<b>日付・人数・%・締切</b>の4軸で、進捗を明確に。</p>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="k-dot">Start</div>
+        <div class="k-num">5/7</div>
+        <div class="k-label">キャンペーン開始日</div>
+        <p class="k-desc">5月7日(水)よりスタート。準備は万全に。早期の紹介活動を意識しよう。</p>
+      </div>
+      <div class="kpi-card">
+        <div class="k-dot">Target</div>
+        <div class="k-num">2<span class="u">人</span></div>
+        <div class="k-label">縦ライン目標人数</div>
+        <p class="k-desc">まずは縦2人。このシンプルな目標から、組織の土台ができる。</p>
+      </div>
+      <div class="kpi-card warm">
+        <div class="k-dot">Bonus</div>
+        <div class="k-num">20<span class="u">%</span></div>
+        <div class="k-label">ラインボーナス率</div>
+        <p class="k-desc">2レベル目に新規会員が繋がれば、ラインボーナスが20%に昇格。</p>
+      </div>
+      <div class="kpi-card warm">
+        <div class="k-dot">End</div>
+        <div class="k-num">6/30</div>
+        <div class="k-label">キャンペーン締切日</div>
+        <p class="k-desc">6月30日(月)が最終日。残り期間を逆算して、行動計画を立てよう。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 9. ACTION STEPS -->
+<!-- ============================================================= -->
+<section id="action" class="action">
+  <div class="wrap">
+    <span class="eyebrow">07 / Action Plan</span>
+    <h2 class="sec-title">今すぐ<em>アクション</em>を起こそう</h2>
+    <p class="sec-sub">キャンペーン成功のカギは、初動のスピード。<b>この5つのステップ</b>を、いまから実行に移そう。</p>
+
+    <div class="action-list">
+      <div class="action-item">
+        <div class="ai-no">01</div>
+        <div>
+          <h4>紹介候補者をリストアップ</h4>
+          <p>お試し入会(<b>5,000P</b>)のハードルの低さを伝えて、5月7日に向けて声かけの段取りを。</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="ai-no">02</div>
+        <div>
+          <h4>紹介先にも紹介スキルを発動</h4>
+          <p>新規会員にも縦2人の目標を共有し、第2レベルを見据えた関係構築を進める。</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="ai-no">03</div>
+        <div>
+          <h4>店舗・サロンのバンドルを提案</h4>
+          <p>小売顧客を担当されているなら、サンプルを使った継続顧客化を設計しよう。</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="ai-no">04</div>
+        <div>
+          <h4>6月30日までにフォローアップ</h4>
+          <p>進捗を確認しつつ、未達者にはラスト10日のテコ入れキャンペーン期間で加速を促す。</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="ai-no">05</div>
+        <div>
+          <h4>次期施策(7月)へバトンを渡す</h4>
+          <p>このキャンペーンで築いたモメンタムを、7月の次期施策に繋げるための準備を並行して進める。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 10. CLOSE -->
+<!-- ============================================================= -->
+<section class="close">
+  <div class="wrap">
+    <span class="eyebrow">VERLiS / Magwarich 2025 Spring-Summer</span>
+    <h2>この60日間が、<br><span class="a">あなたの夏を変える。</span></h2>
+    <p class="close-lead">育てる春に、組織の幹を。<br>届ける夏に、小売のうるおいを。<br>VERLiSマグワリッチ 2ヶ月集中キャンペーン、いよいよスタート。</p>
+
+    <div class="close-period">
+      <span class="cp-lbl">Campaign Period</span>
+      <span class="cp-date">5.7 — 6.30</span>
+      <span class="cp-days">60 DAYS INTENSIVE</span>
+    </div>
+
+    <div class="close-sig">
+      <img src="assets/verlis-logo.png" alt="VERLiS">
+      <span class="sg-tag">MAGWARICH CAMPAIGN</span>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <p>© VERLiS / MAGWARICH CAMPAIGN 2025</p>
+</footer>
+
+</body>
+</html>

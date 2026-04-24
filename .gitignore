@@ -11,3 +11,8 @@ _ref.html
 Thumbs.db
 *.tmp
 *.swp
+
+# Node (build scripts only, not needed at runtime)
+node_modules/
+package.json
+package-lock.json
