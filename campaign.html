@@ -118,14 +118,14 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
 .hero-stage svg.bg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
 .hero-products{position:relative;z-index:2;width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;gap:clamp(4px,1vw,12px);padding:0 8%}
 .hero-products img{object-fit:contain;object-position:bottom;filter:drop-shadow(0 14px 28px rgba(46,80,56,.22));transition:transform .4s ease}
-.hero-products img.lotion{height:72%;z-index:1;margin-bottom:4%}
-.hero-products img.gel{height:82%;z-index:3}
-.hero-products img.sample{height:58%;z-index:2;margin-bottom:14%}
+.hero-products img.lotion{height:90%;z-index:1}
+.hero-products img.gel{height:60%;z-index:3}
+.hero-products img.sample{height:30%;z-index:2}
 
 @media (max-width:640px){
-  .hero-products img.lotion{max-width:28%;max-height:220px;height:auto}
-  .hero-products img.gel{max-width:32%;max-height:240px;height:auto}
-  .hero-products img.sample{max-width:22%;max-height:170px;height:auto}
+  .hero-products img.lotion{max-width:34%;max-height:260px;height:auto}
+  .hero-products img.gel{max-width:24%;max-height:175px;height:auto}
+  .hero-products img.sample{max-width:14%;max-height:90px;height:auto}
   .hero-stage{max-width:360px}
   .hero-r{min-height:300px}
 }
@@ -354,19 +354,294 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
   .close-lead br{display:none}
 }
 
+/* =========================================================
+   ENHANCEMENT — TRANSPARENCY × MOTION × EXCITEMENT
+   ========================================================= */
+
+/* keyframes */
+@keyframes drift{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(8px,-12px) rotate(2deg)}}
+@keyframes breathe{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-10px) scale(1.018)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes sparkleAnim{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1) rotate(180deg)}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(201,163,78,.55),0 0 22px rgba(201,163,78,.32)}50%{box-shadow:0 0 0 14px rgba(201,163,78,0),0 0 38px rgba(201,163,78,.5)}}
+@keyframes riseIn{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.4}}
+
+/* scroll progress bar */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:50;background:linear-gradient(90deg,var(--g-mid) 0%,var(--gold) 50%,var(--warm) 100%);box-shadow:0 0 12px rgba(201,163,78,.45);transition:width .15s ease-out;pointer-events:none}
+
+/* hero ambient gradient breathing */
+.hero{
+  background:
+    radial-gradient(ellipse at 85% 18%,rgba(184,212,184,.6) 0%,transparent 55%),
+    radial-gradient(ellipse at 8% 95%,rgba(232,240,229,.85) 0%,transparent 60%),
+    radial-gradient(ellipse at 50% 50%,rgba(201,163,78,.06) 0%,transparent 70%),
+    linear-gradient(168deg,#F3F8EE 0%,#E6EFE0 50%,#D6E5D2 100%);
+  background-size:200% 200%,200% 200%,200% 200%,100% 100%;
+  animation:gradientShift 22s ease-in-out infinite;
+}
+
+/* sparkle layer (filled by JS) */
+.sparkle-layer{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.sparkle{position:absolute;border-radius:50%;background:radial-gradient(circle,#FFFFFF 0%,rgba(228,201,133,.85) 35%,rgba(184,212,184,.4) 65%,transparent 75%);filter:blur(.4px);animation:sparkleAnim 4s ease-in-out infinite}
+
+/* hero title — word reveal + gradient shimmer */
+.hero-title .word{display:inline-block;animation:riseIn .9s cubic-bezier(.2,.8,.2,1) both;will-change:transform,opacity}
+.hero-title .word.w1{animation-delay:.12s}
+.hero-title .word.w2{animation-delay:.36s}
+.hero-title .a{
+  background:linear-gradient(115deg,#1F3927 0%,#2E5038 28%,#C9A34E 50%,#2E5038 72%,#1F3927 100%);
+  background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 6s ease-in-out infinite
+}
+
+/* hero products float */
+.hero-products img{animation:breathe 6s ease-in-out infinite}
+.hero-products img.lotion{animation-delay:0s}
+.hero-products img.gel{animation-delay:.8s}
+.hero-products img.sample{animation-delay:1.6s}
+.hero-products img:hover{transform:translateY(-8px) scale(1.03)}
+
+/* hero period chip — glass + pulse */
+.hero-period{
+  position:relative;
+  background:linear-gradient(135deg,rgba(255,255,255,.96) 0%,rgba(246,249,243,.92) 100%);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  animation:scaleIn 1s .8s both
+}
+.hero-period .days{
+  background:linear-gradient(135deg,#FFF8E1,#F4E4B5);
+  border-color:var(--gold);
+  animation:pulseGlow 2.4s ease-in-out infinite
+}
+
+/* hero countdown */
+.countdown{
+  margin-top:20px;display:inline-flex;flex-wrap:wrap;align-items:center;gap:12px;
+  padding:14px 22px;border-radius:var(--r);
+  background:linear-gradient(135deg,rgba(31,57,39,.94) 0%,rgba(46,80,56,.94) 100%);
+  color:#fff;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 14px 36px rgba(31,57,39,.22);
+  border:1px solid rgba(228,201,133,.4);
+  animation:scaleIn 1s 1.05s both;
+  position:relative
+}
+.countdown .cd-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--gold-light);font-weight:700;text-transform:uppercase;padding-right:12px;border-right:1px solid rgba(228,201,133,.3)}
+.countdown .cd-block{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:46px}
+.countdown .cd-num{font-family:var(--mono);font-size:24px;font-weight:800;color:#fff;line-height:1;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.countdown .cd-unit{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.18em;color:var(--gold-light)}
+.countdown .cd-sep{font-family:var(--mono);font-size:18px;font-weight:800;color:rgba(228,201,133,.55);align-self:flex-start;padding-top:4px}
+.countdown.live{background:linear-gradient(135deg,#C87030 0%,#E89456 100%);border-color:rgba(255,233,207,.5)}
+.countdown.live .cd-lbl,.countdown.live .cd-unit{color:#FFE9CF}
+.countdown.live .cd-sep{color:rgba(255,233,207,.55)}
+.countdown .cd-pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--warm);margin-right:8px;animation:pulseDot 1.4s ease-in-out infinite;box-shadow:0 0 10px rgba(232,148,86,.7)}
+.countdown.live .cd-pulse{background:#FFE9CF;box-shadow:0 0 12px rgba(255,233,207,.9)}
+
+/* scroll reveal — JS gated */
+.js-ready .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);will-change:transform,opacity}
+.js-ready .reveal.is-visible{opacity:1;transform:translateY(0)}
+.js-ready .reveal.delay-1{transition-delay:.08s}
+.js-ready .reveal.delay-2{transition-delay:.16s}
+.js-ready .reveal.delay-3{transition-delay:.24s}
+
+/* sec-title em — animated highlight underline */
+.sec-title em{position:relative;display:inline-block;z-index:1}
+.sec-title em::after{content:"";position:absolute;left:-3px;right:-3px;bottom:.06em;height:.42em;background:linear-gradient(90deg,rgba(184,212,184,.55),rgba(201,163,78,.5));z-index:-1;border-radius:4px;transform-origin:left center}
+.js-ready .sec-title em::after{transform:scaleX(0);transition:transform .9s .25s cubic-bezier(.2,.8,.2,1)}
+.js-ready .sec-title.is-visible em::after,.js-ready .reveal.is-visible .sec-title em::after{transform:scaleX(1)}
+
+/* card hover refinement + shimmer pass on map cards */
+.map-card{position:relative;overflow:hidden}
+.map-card::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-110%);transition:transform .8s cubic-bezier(.2,.8,.2,1);pointer-events:none;z-index:1}
+.map-card:hover{transform:translateY(-6px) scale(1.012);box-shadow:0 20px 44px rgba(46,80,56,.18);border-color:var(--g-soft)}
+.map-card:hover::after{transform:translateX(110%)}
+
+.kpi-card{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s cubic-bezier(.2,.8,.2,1),border-color .25s}
+.kpi-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 20px 44px rgba(46,80,56,.18);border-color:var(--g-soft)}
+
+.benefit{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s cubic-bezier(.2,.8,.2,1)}
+.benefit:hover{transform:translateY(-3px);box-shadow:0 20px 42px rgba(46,80,56,.16)}
+.benefit-visual img{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.benefit:hover .benefit-visual img{transform:scale(1.06) translateY(-4px)}
+
+.salon-point{transition:transform .35s,border-color .25s,box-shadow .25s}
+.salon-point:hover{transform:translateX(6px);border-color:var(--warm-deep);box-shadow:0 14px 30px rgba(46,80,56,.1)}
+
+.action-item{transition:transform .35s,background-color .25s,border-color .25s}
+.action-item:hover{transform:translateX(8px)}
+.action-item .ai-no{transition:transform .35s,color .25s,text-shadow .25s}
+.action-item:hover .ai-no{transform:scale(1.1);text-shadow:0 0 18px rgba(228,201,133,.6)}
+
+/* KPI numbers — gradient text + drop shadow */
+.kpi-card .k-num{
+  background:linear-gradient(160deg,var(--g-deep) 0%,var(--g) 55%,var(--gold-deep) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 18px rgba(46,80,56,.18))
+}
+.kpi-card.warm .k-num{
+  background:linear-gradient(160deg,var(--warm-deep) 0%,var(--warm) 50%,var(--gold-deep) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 18px rgba(200,112,48,.16))
+}
+.kpi-card .k-num .u{
+  background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--g-soft);
+  filter:none
+}
+.kpi-card.warm .k-num .u{color:var(--warm)}
+.kpi-card .k-dot{display:inline-flex;align-items:center;gap:6px}
+.kpi-card .k-dot::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(201,163,78,.5);animation:pulseDot 2s ease-in-out infinite}
+
+/* drifting decorative leaves (non-reduced motion) */
+.leaf{animation:drift 16s ease-in-out infinite}
+.leaf:nth-of-type(2){animation-delay:-8s;animation-duration:20s}
+
+/* close period gradient text */
+.close-period{transition:transform .4s}
+.close-period:hover{transform:translateY(-3px)}
+.close-period .cp-date{
+  background:linear-gradient(120deg,#fff 0%,var(--gold-light) 50%,#fff 100%);
+  background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 5s ease-in-out infinite
+}
+
+/* nav hover underline */
+.nav-inner a{position:relative}
+.nav-inner a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:2px;background:linear-gradient(90deg,var(--g),var(--gold));border-radius:2px;transform:scaleX(0);transform-origin:center;transition:transform .25s}
+.nav-inner a:hover::after{transform:scaleX(1)}
+
+/* benefit b-tag pulse cue */
+.benefit-body .b-tag{position:relative;padding-left:18px}
+.benefit-body .b-tag::before{content:"";position:absolute;left:8px;top:50%;width:5px;height:5px;border-radius:50%;background:currentColor;transform:translateY(-50%);animation:pulseDot 2s ease-in-out infinite}
+
+/* mobile adjustments for countdown */
+@media (max-width:520px){
+  .countdown{padding:12px 16px;gap:8px}
+  .countdown .cd-block{min-width:40px}
+  .countdown .cd-num{font-size:20px}
+  .countdown .cd-lbl{font-size:9px;padding-right:8px}
+}
+
+/* === START emphasis: 5/7 10:00 === */
+.start-banner{
+  display:inline-flex;align-items:stretch;gap:0;
+  margin:clamp(20px,3vw,28px) 0 18px;
+  border-radius:999px;
+  position:relative;
+  animation:scaleIn .9s .35s both;
+  filter:drop-shadow(0 14px 28px rgba(201,163,78,.35));
+  font-family:var(--sans);
+  max-width:100%
+}
+.start-banner .sb-flag{
+  display:inline-flex;align-items:center;
+  font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.22em;
+  background:linear-gradient(135deg,#1F3927 0%,#2E5038 100%);
+  color:#FFE9CF;
+  padding:0 18px 0 22px;border-radius:999px 0 0 999px
+}
+.start-banner .sb-flag::before{
+  content:"";display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:#E89456;margin-right:9px;
+  animation:pulseDot 1.4s ease-in-out infinite;box-shadow:0 0 12px rgba(232,148,86,.85)
+}
+.start-banner .sb-content{
+  display:flex;align-items:baseline;gap:10px;
+  background:linear-gradient(135deg,#C9A34E 0%,#A6822F 100%);
+  color:#fff;padding:13px 22px;
+  border-left:1px solid rgba(255,255,255,.25);
+  border-right:1px solid rgba(255,255,255,.25)
+}
+.start-banner .sb-date{font-family:var(--serif);font-size:24px;font-weight:900;letter-spacing:.04em;line-height:1;color:#fff}
+.start-banner .sb-d{font-size:13px;font-weight:700;opacity:.92;margin-left:3px}
+.start-banner .sb-time{font-family:var(--mono);font-size:24px;font-weight:800;letter-spacing:.04em;color:#FFF8E1}
+.start-banner .sb-msg{
+  display:inline-flex;align-items:center;
+  font-size:12px;font-weight:800;color:#1F3927;
+  background:#FFF8E1;padding:0 20px;border-radius:0 999px 999px 0;
+  letter-spacing:.05em;white-space:nowrap
+}
+@media (max-width:560px){
+  .start-banner{flex-wrap:wrap;border-radius:14px;width:100%}
+  .start-banner .sb-flag{border-radius:14px 14px 0 0;width:100%;justify-content:center;padding:9px 14px;font-size:10px}
+  .start-banner .sb-content{padding:11px 14px;justify-content:center;width:100%;border:none;border-bottom:1px dashed rgba(255,255,255,.35)}
+  .start-banner .sb-msg{padding:9px 14px;width:100%;justify-content:center;border-radius:0 0 14px 14px}
+  .start-banner .sb-date{font-size:21px}
+  .start-banner .sb-time{font-size:21px}
+}
+
+/* hero-period — add 10:00 OPEN tag */
+.hero-period .time{
+  font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.16em;
+  color:var(--gold-deep);
+  padding:4px 10px;border-radius:6px;
+  background:linear-gradient(135deg,#FFF8E1,#F4E4B5);
+  border:1px solid var(--gold)
+}
+
+/* close-period — emphasize start time */
+.close-period .cp-time{
+  font-family:var(--mono);font-size:13px;font-weight:800;letter-spacing:.16em;
+  color:#FFE9CF;padding:7px 16px;
+  background:rgba(201,163,78,.18);
+  border:1px solid rgba(228,201,133,.55);
+  border-radius:999px;
+  margin:2px 0;
+  position:relative
+}
+.close-period .cp-time::before{
+  content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:#E89456;margin-right:9px;vertical-align:middle;
+  animation:pulseDot 1.4s ease-in-out infinite;box-shadow:0 0 10px rgba(232,148,86,.7)
+}
+
+/* countdown — single-row blocks (no wrap) */
+.countdown{flex-direction:column;align-items:stretch;gap:10px;flex-wrap:nowrap;width:auto;max-width:100%}
+.countdown .cd-lbl{
+  padding-right:0;border-right:none;
+  padding-bottom:9px;border-bottom:1px solid rgba(228,201,133,.32);
+  width:100%;display:flex;align-items:center
+}
+.countdown .cd-row{
+  display:flex;flex-wrap:nowrap;align-items:center;
+  gap:clamp(6px,1.4vw,12px);width:100%;
+  justify-content:space-between
+}
+.countdown .cd-block{flex:1 1 0;min-width:0}
+.countdown .cd-sep{flex:0 0 auto;padding-top:0}
+@media (max-width:520px){
+  .countdown{padding:14px 14px}
+  .countdown .cd-num{font-size:19px}
+  .countdown .cd-lbl{font-size:10px;letter-spacing:.14em}
+  .countdown .cd-sep{font-size:14px}
+  .countdown .cd-unit{font-size:8px}
+  .countdown .cd-row{gap:4px}
+}
+
 /* ===== REDUCED MOTION ===== */
 @media (prefers-reduced-motion:reduce){
-  *{animation-duration:0.01ms !important;transition-duration:0.01ms !important}
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
   html{scroll-behavior:auto}
+  .js-ready .reveal{opacity:1;transform:none}
+  .hero-title .a{background:var(--g-deep);-webkit-background-clip:initial;background-clip:initial;color:var(--g-deep)}
+  .kpi-card .k-num{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--g-deep);filter:none}
+  .kpi-card.warm .k-num{color:var(--warm-deep)}
+  .close-period .cp-date{background:none;-webkit-background-clip:initial;background-clip:initial;color:#fff}
 }
 </style>
 </head>
 <body>
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <!-- ============================================================= -->
 <!-- HERO -->
 <!-- ============================================================= -->
 <header class="hero">
+  <div class="sparkle-layer" aria-hidden="true"></div>
   <!-- Decorative leaves -->
   <svg class="leaf" style="top:40px;left:-30px;width:180px" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
     <g fill="#B8D4B8" opacity=".55">
@@ -395,7 +670,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
           <span class="tag">MAGWARICH CAMPAIGN 2025</span>
         </div>
         <span class="eyebrow">2-Month Intensive Campaign</span>
-        <h1 class="hero-title">育てる春、<br><span class="a">届ける夏。</span></h1>
+        <h1 class="hero-title"><span class="word w1">育てる春、</span><br><span class="word w2 a">届ける夏。</span></h1>
         <p class="hero-sub">VERLiS マグワリッチ 2ヶ月集中キャンペーン</p>
         <p class="hero-lead">新規紹介で組織を <b>縦に掘る</b> 施策と、小売で商品を <b>届ける</b> 施策。<br>2つのエンジンで、この60日間を最大の加速期間に。</p>
 
@@ -405,10 +680,33 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
           <span class="pill">4大特典</span>
         </div>
 
+        <div class="start-banner" aria-label="キャンペーン開始日時">
+          <span class="sb-flag">START</span>
+          <span class="sb-content">
+            <span class="sb-date">5/7<span class="sb-d">(木)</span></span>
+            <span class="sb-time">AM10:00</span>
+          </span>
+          <span class="sb-msg">いよいよ始動</span>
+        </div>
+
         <div class="hero-period">
           <span class="lbl">PERIOD</span>
           <span class="date">5.7 → 6.30</span>
+          <span class="time">10:00 OPEN</span>
           <span class="days">60 DAYS</span>
+        </div>
+
+        <div class="countdown" data-target="2026-05-07T10:00:00" data-end="2026-06-30T23:59:59" aria-live="polite">
+          <span class="cd-lbl"><span class="cd-pulse" aria-hidden="true"></span>5/7(木) AM10:00 OPEN まで</span>
+          <div class="cd-row">
+            <div class="cd-block cd-d"><span class="cd-num">--</span><span class="cd-unit">DAYS</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-block cd-h"><span class="cd-num">--</span><span class="cd-unit">HRS</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-block cd-m"><span class="cd-num">--</span><span class="cd-unit">MIN</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-block cd-s"><span class="cd-num">--</span><span class="cd-unit">SEC</span></div>
+          </div>
         </div>
       </div>
 
@@ -439,8 +737,8 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
           </svg>
           <div class="hero-products">
             <img class="lotion" src="assets/boost-lotion.png" alt="ブーストスキンローション">
-            <img class="gel" src="assets/magwarich-gel.png" alt="マグワリッチ 美容ジェル">
-            <img class="sample" src="assets/magwarich-sample.png" alt="美容ジェル サンプル">
+            <img class="gel" src="assets/magwarich-gel.png?v=2" alt="マグワリッチ 美容ジェル">
+            <img class="sample" src="assets/magwarich-sample.png?v=2" alt="美容ジェル サンプル">
           </div>
         </div>
       </div>
@@ -471,12 +769,12 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
   <div class="wrap">
     <span class="eyebrow">01 / Campaign Vision</span>
     <h2 class="sec-title">なぜ今、<em>このキャンペーン</em>が必要か</h2>
-    <p class="sec-sub">4月末でペイフォワードキャンペーンが終了し、次の大型施策は7月から。この<b>5月〜6月の"空白"を、組織成長の助走期間に変える</b>ための2ヶ月集中プログラムです。</p>
+    <p class="sec-sub">4月末でペイフォワードキャンペーンが終了し、7月からは<b>ペイフォワードキャンペーン第二弾</b>がスタート。この<b>5月〜6月の"空白"を、組織成長の助走期間に変える</b>ための2ヶ月集中プログラムです。</p>
 
     <div class="why-grid">
       <div class="why-text">
         <p><b>スケジュールの空白を埋める。</b></p>
-        <p>4月にペイフォワードキャンペーンが終了し、次の大型施策は7月スタート予定。このまま2ヶ月モメンタムを止めれば、春に築いた流れが一度リセットされます。</p>
+        <p>4月にペイフォワードキャンペーンが終了し、7月からは<b>ペイフォワードキャンペーン第二弾</b>がスタート予定。このまま2ヶ月モメンタムを止めれば、春に築いた流れが一度リセットされます。</p>
         <p>この期間にメンタム維持・加速のための施策を、マグワリッチ × ブーストスキンローション × 組織成長 の3軸で設計しました。</p>
       </div>
       <div class="why-card">
@@ -504,14 +802,14 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
       </div>
       <div class="tl-node now">
         <div class="tl-phase">★ Now</div>
-        <div class="tl-date">5月7日 — 6月30日</div>
+        <div class="tl-date">5月7日 10:00 — 6月30日</div>
         <div class="tl-name">育てる春、届ける夏。</div>
         <span class="tl-tag">60 DAYS 集中</span>
       </div>
       <div class="tl-node">
         <div class="tl-phase">Next</div>
         <div class="tl-date">7月 〜</div>
-        <div class="tl-name">次期施策スタート</div>
+        <div class="tl-name">ペイフォワード<br>キャンペーン第二弾</div>
         <span class="tl-tag">待機</span>
       </div>
     </div>
@@ -540,7 +838,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
 
     <div class="map-grid">
       <div class="map-card">
-        <div class="m-ico"><img src="assets/magwarich-sample.png" alt=""></div>
+        <div class="m-ico"><img src="assets/magwarich-sample.png?v=2" alt=""></div>
         <div>
           <div class="m-no">特典 A / 組織構築</div>
           <div class="m-label">新規ビジネス会員登録で</div>
@@ -548,7 +846,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
         </div>
       </div>
       <div class="map-card">
-        <div class="m-ico"><img src="assets/magwarich-gel.png" alt=""></div>
+        <div class="m-ico"><img src="assets/magwarich-gel.png?v=2" alt=""></div>
         <div>
           <div class="m-no">特典 B / 組織構築</div>
           <div class="m-label">縦ライン2人達成で</div>
@@ -564,7 +862,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
         </div>
       </div>
       <div class="map-card warm">
-        <div class="m-ico"><img src="assets/magwarich-sample.png" alt=""></div>
+        <div class="m-ico"><img src="assets/magwarich-sample.png?v=2" alt=""></div>
         <div>
           <div class="m-no">特典 D / 小売促進</div>
           <div class="m-label">ローション 6本入購入で</div>
@@ -588,7 +886,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
     <div class="benefit">
       <div class="benefit-visual">
         <span class="chip">非売品 / 30g</span>
-        <img src="assets/magwarich-sample.png" alt="美容ジェル サンプル 30g">
+        <img src="assets/magwarich-sample.png?v=2" alt="美容ジェル サンプル 30g">
       </div>
       <div class="benefit-body">
         <span class="b-tag">特典 A — 入会即プレゼント</span>
@@ -607,7 +905,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
     <div class="benefit">
       <div class="benefit-visual">
         <span class="chip">正規品 / 75g</span>
-        <img src="assets/magwarich-gel.png" alt="美容ジェル 75g">
+        <img src="assets/magwarich-gel.png?v=2" alt="美容ジェル 75g">
       </div>
       <div class="benefit-body">
         <span class="b-tag">特典 B — 縦2人達成でご褒美</span>
@@ -829,7 +1127,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
     <div class="benefit warm">
       <div class="benefit-visual">
         <span class="chip">PURCHASE / 6本入</span>
-        <img src="assets/magwarich-gel.png" alt="美容ジェル 6本">
+        <img src="assets/magwarich-gel.png?v=2" alt="美容ジェル 6本">
       </div>
       <div class="benefit-body">
         <span class="b-tag">バンドル A — 美容ジェル6本セット購入</span>
@@ -839,7 +1137,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
         <div class="bundle">
           <div class="bundle-side">
             <span class="bs-chip">× 6</span>
-            <img src="assets/magwarich-gel.png" alt="ジェル">
+            <img src="assets/magwarich-gel.png?v=2" alt="ジェル">
             <div class="bs-lbl">美容ジェル 75g<small>6本入を購入</small></div>
           </div>
           <div class="bundle-plus">+</div>
@@ -873,7 +1171,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
           <div class="bundle-plus">+</div>
           <div class="bundle-side">
             <span class="bs-chip">× 6</span>
-            <img src="assets/magwarich-sample.png" alt="サンプル">
+            <img src="assets/magwarich-sample.png?v=2" alt="サンプル">
             <div class="bs-lbl">サンプル 30g<small>非売品 / 特典</small></div>
           </div>
         </div>
@@ -1000,13 +1298,13 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
       </div>
       <div class="kpi-card">
         <div class="k-dot">Target</div>
-        <div class="k-num">2<span class="u">人</span></div>
+        <div class="k-num"><span data-count="2">0</span><span class="u">人</span></div>
         <div class="k-label">縦ライン目標人数</div>
         <p class="k-desc">まずは縦2人。このシンプルな目標から、組織の土台ができる。</p>
       </div>
       <div class="kpi-card warm">
         <div class="k-dot">Bonus</div>
-        <div class="k-num">20<span class="u">%</span></div>
+        <div class="k-num"><span data-count="20">0</span><span class="u">%</span></div>
         <div class="k-label">ラインボーナス率</div>
         <p class="k-desc">2レベル目に新規会員が繋がれば、ラインボーナスが20%に昇格。</p>
       </div>
@@ -1061,8 +1359,8 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
       <div class="action-item">
         <div class="ai-no">05</div>
         <div>
-          <h4>次期施策(7月)へバトンを渡す</h4>
-          <p>このキャンペーンで築いたモメンタムを、7月の次期施策に繋げるための準備を並行して進める。</p>
+          <h4>ペイフォワード第二弾(7月)へバトンを渡す</h4>
+          <p>このキャンペーンで築いたモメンタムを、7月の<b>ペイフォワードキャンペーン第二弾</b>に繋げるための準備を並行して進める。</p>
         </div>
       </div>
     </div>
@@ -1081,6 +1379,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
     <div class="close-period">
       <span class="cp-lbl">Campaign Period</span>
       <span class="cp-date">5.7 — 6.30</span>
+      <span class="cp-time">5/7(木) AM10:00 START</span>
       <span class="cp-days">60 DAYS INTENSIVE</span>
     </div>
 
@@ -1094,6 +1393,137 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
 <footer class="foot">
   <p>© VERLiS / MAGWARICH CAMPAIGN 2025</p>
 </footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js-ready');
+
+  // ----- sparkles in hero
+  var sl = document.querySelector('.sparkle-layer');
+  if(sl){
+    var N = 18;
+    for(var i=0;i<N;i++){
+      var s = document.createElement('span');
+      s.className = 'sparkle';
+      var sz = 4 + Math.random()*10;
+      s.style.width = sz + 'px';
+      s.style.height = sz + 'px';
+      s.style.left = (Math.random()*100) + '%';
+      s.style.top = (Math.random()*100) + '%';
+      s.style.animationDelay = (Math.random()*4) + 's';
+      s.style.animationDuration = (3 + Math.random()*4) + 's';
+      sl.appendChild(s);
+    }
+  }
+
+  // ----- auto-attach reveal classes (skip hero)
+  var revealSel = ['.eyebrow','.sec-title','.sec-sub','.kpi-card','.map-card','.benefit','.salon-point','.action-item','.tl-node','.flow-node','.why-card','.why-text','.flow-illust','.salon-illust','.close-period','.map-head-col','.bundle','.bundle-note'];
+  revealSel.forEach(function(sel){
+    var nodes = document.querySelectorAll(sel);
+    Array.prototype.forEach.call(nodes, function(el, i){
+      if(el.closest('.hero')) return;
+      el.classList.add('reveal');
+      var d = i % 4;
+      if(d > 0) el.classList.add('delay-' + d);
+    });
+  });
+
+  // ----- IntersectionObserver scroll reveal
+  if('IntersectionObserver' in window){
+    var revealObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('is-visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  // ----- number counter
+  function animateCount(el, target, duration){
+    duration = duration || 1500;
+    var start = performance.now();
+    function easeOut(t){ return 1 - Math.pow(1 - t, 3); }
+    function tick(now){
+      var t = Math.min(1, (now - start) / duration);
+      el.textContent = Math.round(target * easeOut(t));
+      if(t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if('IntersectionObserver' in window){
+    var countObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var n = parseFloat(e.target.dataset.count);
+          animateCount(e.target, n);
+          countObs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.5});
+    document.querySelectorAll('[data-count]').forEach(function(el){ countObs.observe(el); });
+  } else {
+    document.querySelectorAll('[data-count]').forEach(function(el){ el.textContent = el.dataset.count; });
+  }
+
+  // ----- countdown
+  var cdEl = document.querySelector('.countdown[data-target]');
+  if(cdEl){
+    var targetStart = new Date(cdEl.dataset.target).getTime();
+    var targetEnd = cdEl.dataset.end ? new Date(cdEl.dataset.end).getTime() : null;
+    var dn = cdEl.querySelector('.cd-d .cd-num');
+    var hn = cdEl.querySelector('.cd-h .cd-num');
+    var mn = cdEl.querySelector('.cd-m .cd-num');
+    var sn = cdEl.querySelector('.cd-s .cd-num');
+    var lbl = cdEl.querySelector('.cd-lbl');
+    function pad(n){ return n < 10 ? '0' + n : '' + n; }
+    function tick(){
+      var now = Date.now();
+      var diff;
+      if(now < targetStart){
+        diff = targetStart - now;
+        lbl.innerHTML = '<span class="cd-pulse" aria-hidden="true"></span>5/7(木) AM10:00 OPEN まで';
+        cdEl.classList.remove('live');
+      } else if(targetEnd && now < targetEnd){
+        diff = targetEnd - now;
+        lbl.innerHTML = '<span class="cd-pulse" aria-hidden="true"></span>LIVE NOW — 終了まで';
+        cdEl.classList.add('live');
+      } else {
+        lbl.innerHTML = '<span class="cd-pulse" aria-hidden="true"></span>CAMPAIGN CLOSED';
+        dn.textContent='00'; hn.textContent='00'; mn.textContent='00'; sn.textContent='00';
+        return;
+      }
+      var days = Math.floor(diff / 86400000); diff %= 86400000;
+      var hrs  = Math.floor(diff / 3600000);  diff %= 3600000;
+      var mins = Math.floor(diff / 60000);    diff %= 60000;
+      var secs = Math.floor(diff / 1000);
+      dn.textContent = pad(days);
+      hn.textContent = pad(hrs);
+      mn.textContent = pad(mins);
+      sn.textContent = pad(secs);
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  // ----- scroll progress
+  var sp = document.querySelector('.scroll-progress');
+  if(sp){
+    function onScroll(){
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      var p = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      sp.style.width = p + '%';
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  }
+})();
+</script>
 
 </body>
 </html>

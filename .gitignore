@@ -6,6 +6,12 @@ index-old.html
 downloads/
 _ref.html
 
+# Internal references (do not publish)
+assets/Image.png
+assets/xserver*.png
+campaign-wp.html
+transform-wp.js
+
 # OS / editor
 .DS_Store
 Thumbs.db
