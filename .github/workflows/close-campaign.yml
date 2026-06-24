@@ -1,0 +1,39 @@
+name: Close campaign
+
+# 2026/06/30 17:00 JST = 08:00 UTC に campaign.html を削除し、URL を 404 にする。
+# cron は GitHub の都合で数分遅れることがあるため、手動実行(workflow_dispatch)でも閉鎖できる。
+on:
+  schedule:
+    - cron: "0 8 30 6 *"   # 6/30 08:00 UTC (= 17:00 JST)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Guard against early run
+        run: |
+          TODAY="$(date -u +%Y%m%d)"
+          if [ "$TODAY" -lt 20260630 ]; then
+            echo "Target date not reached yet (UTC $TODAY < 20260630). Skipping."
+            exit 0
+          fi
+          echo "RUN_CLOSE=1" >> "$GITHUB_ENV"
+
+      - name: Remove campaign.html
+        if: env.RUN_CLOSE == '1'
+        run: |
+          if [ ! -f campaign.html ]; then
+            echo "campaign.html already removed. Nothing to do."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git rm campaign.html
+          git commit -m "Close campaign: remove campaign.html (2026/06/30 17:00 JST)"
+          git push
